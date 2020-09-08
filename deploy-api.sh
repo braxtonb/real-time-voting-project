@@ -1,1 +1,0 @@
-git subtree push --prefix real-time-voting-api heroku master
