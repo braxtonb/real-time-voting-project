@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  site:
+    container_name: real-time-voting-local
+    build: ./real-time-voting/
+    ports:
+      - 3000:3000
+    volumes:
+      - ./real-time-voting/:/usr/src/app/
+      - /usr/src/app/node_modules
+      - /usr/src/app/.next
+    depends_on:
+      - api
+    networks:
+      - rtvnet
+
+  api:
+    container_name: real-time-voting-api-local
+    build: ./real-time-voting-api/
+    ports:
+      - 4000:4000
+    environment:
+      - PORT=4000
+    volumes:
+      - ./real-time-voting-api/:/usr/src/app/
+    depends_on:
+      - postgres
+    networks:
+      - rtvnet
+
+  postgres:
+    container_name: real-time-voting-db-local
+    image: postgres
+    volumes:
+      - ./real-time-voting-db/postgres/init/:/docker-entrypoint-initdb.d/
+      - postgresdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=realtimevoting
+      - POSTGRES_USER=${POSTGRES_USER:-admin}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-password}
+    ports:
+      - 5432:5432
+    networks:
+      - rtvnet
+
+  pgadmin:
+    container_name: real-time-voting-pgadmin-local
+    image: dpage/pgadmin4
+    volumes:
+      - pgadmin:/root/.pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD:-admin}
+    ports:
+      - ${PGADMIN_PORT:-5050}:80
+    depends_on:
+      - postgres
+    networks:
+      - rtvnet
+
+volumes:
+  postgresdata:
+  pgadmin:
+
+networks:
+  rtvnet:
