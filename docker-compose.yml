@@ -1,19 +1,19 @@
 version: '3.8'
 
 services:
-  site:
-    container_name: real-time-voting-local
-    build: ./real-time-voting/
-    ports:
-      - 3000:3000
-    volumes:
-      - ./real-time-voting/:/usr/src/app/
-      - /usr/src/app/node_modules
-      - /usr/src/app/.next
-    depends_on:
-      - api
-    networks:
-      - rtvnet
+  # site:
+  #   container_name: real-time-voting-local
+  #   build: ./real-time-voting/
+  #   ports:
+  #     - 3000:3000
+  #   volumes:
+  #     - ./real-time-voting/:/usr/src/app/
+  #     - /usr/src/app/node_modules
+  #     - /usr/src/app/.next
+  #   depends_on:
+  #     - api
+  #   networks:
+  #     - rtvnet
 
   api:
     container_name: real-time-voting-api-local

@@ -12,8 +12,8 @@ switch (process.env.NODE_ENV) {
     API_GRAPHQL_WS = API_GRAPHQL_WS_DEV;
     break;
   case 'production':
-    API_GRAPHQL = process.env.API_GRAPHQL_PROD;
-    API_GRAPHQL_WS = process.env.API_GRAPHQL_WS_PROD;
+    API_GRAPHQL = process.env.NEXT_PUBLIC_API_GRAPHQL_PROD;
+    API_GRAPHQL_WS = process.env.NEXT_PUBLIC_API_GRAPHQL_WS_PROD;
     break;
   default:
     API_GRAPHQL = API_GRAPHQL_DEV;

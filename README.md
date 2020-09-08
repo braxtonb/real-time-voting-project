@@ -48,11 +48,11 @@ Also, if you do not need to view your database with a GUI admin tool, I recommen
 
 *Frontend*
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fbraxtonb%2Freal-time-voting-project&env=API_GRAPHQL_PROD,API_GRAPHQL_WS_PROD&envDescription=The%20API_GRAPHQL_PROD%20and%20API_GRAPHQL_WS_PROD%20are%20used%20to%20connect%20to%20your%20production%20Apollo%20Server's%20https%20and%20websocket%20(wss)%20endpoints)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fbraxtonb%2Freal-time-voting-project&env=NEXT_PUBLIC_API_GRAPHQL_PROD,NEXT_PUBLIC_API_GRAPHQL_WS_PROD&envDescription=The%20API_GRAPHQL_PROD%20and%20API_GRAPHQL_WS_PROD%20are%20used%20to%20connect%20to%20your%20production%20Apollo%20Server's%20https%20and%20websocket%20(wss)%20endpoints)
 
 After clicking the deploy button, select the `real-time-voting` directory.
 
-It is important to set the `API_GRAPHQL_PROD` and `API_GRAPHQL_WS_PROD` environment variables for any hosting solution you choose. The `API_GRAPHQL_PROD` and `API_GRAPHQL_WS_PROD` are used to connect to your production Apollo Server's https and websocket (wss) endpoints
+It is important to set the `NEXT_PUBLIC_API_GRAPHQL_PROD` and `NEXT_PUBLIC_API_GRAPHQL_WS_PROD` environment variables for any hosting solution you choose. The `NEXT_PUBLIC_API_GRAPHQL_PROD` and `NEXT_PUBLIC_API_GRAPHQL_WS_PROD` are used to connect to your production Apollo Server's https and websocket (wss) endpoints
 
 *Backend*
 
