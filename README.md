@@ -10,6 +10,8 @@ Real Time Voting project. See live voting entertainment franchise results.
 
 * Clone the repo, `git clone git@github.com:braxtonb/real-time-voting-project.git`
 * Start the project, `docker-compose up`
+* View the site @ http://localhost:3000/
+* View the GraphQL Playground @ http://localhost:4000/
 
 #### Technologies and Tools
 
