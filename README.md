@@ -2,41 +2,45 @@
 
 [DEMO](https://real-time-voting-project.vercel.app/)
 
-#### Overview
+### Overview
 
 Real Time Voting project. See live voting entertainment franchise results.
 
-#### Setup
+### Setup
 
 * Clone the repo, `git clone git@github.com:braxtonb/real-time-voting-project.git`
 * Start the project, `docker-compose up`
 * View the site @ http://localhost:3000/
 * View the GraphQL Playground @ http://localhost:4000/
 
-#### Technologies and Tools
+### Technologies and Tools
 
-*Frontend*
-- React.js
-- Next.js
-- GraphQL
-- Apollo Client
-- Typescript
+**Frontend**
 
-*Backend*
-- Apollo Server
-- Primsa
-- Typescript
+- [React.js](https://reactjs.org/)
+- [Next.js](https://nextjs.org/)
+- [GraphQL](https://graphql.org/)
+- [Apollo Client](https://www.apollographql.com/docs/react/)
+- [Typescript](https://www.typescriptlang.org/)
 
-*Database*
-- Postgres
-- pgAdmin
+**Backend**
 
-*Hosting*
-- Docker compose | frontend, backend, database, pgAdmin | local
-- Vercel | frontend | production
-- Heroku | backend, database (heroku add-on) | production
+- [Apollo Server](https://www.apollographql.com/docs/apollo-server/)
+- [Primsa](https://www.prisma.io/)
+- [Typescript](https://www.typescriptlang.org/)
 
-*Recommended*
+**Database**
+
+- [Postgres](https://www.postgresql.org/)
+- [pgAdmin](https://www.pgadmin.org/)
+
+**Hosting**
+
+- [Docker compose](https://docs.docker.com/compose/) | frontend, backend, database, pgAdmin | local
+- [Vercel](https://vercel.com/docs) | frontend | production
+- [Heroku](https://devcenter.heroku.com/categories/reference) | backend, database (heroku add-on) | production
+
+**Recommended**
 
 I strongly recommend commenting out the site service in docker-compose.yml when actively developing.
 
@@ -44,9 +48,9 @@ The Next.js startup and hot reloading without docker is faster than with docker.
 
 Also, if you do not need to view your database with a GUI admin tool, I recommend commenting out the pgAdmin service in docker-compose.yml.
 
-#### Deployment
+### Deployment
 
-*Frontend*
+**Frontend**
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fbraxtonb%2Freal-time-voting-project&env=NEXT_PUBLIC_API_GRAPHQL_PROD,NEXT_PUBLIC_API_GRAPHQL_WS_PROD&envDescription=The%20API_GRAPHQL_PROD%20and%20API_GRAPHQL_WS_PROD%20are%20used%20to%20connect%20to%20your%20production%20Apollo%20Server's%20https%20and%20websocket%20(wss)%20endpoints)
 
@@ -54,13 +58,13 @@ After clicking the deploy button, select the `real-time-voting` directory.
 
 It is important to set the `NEXT_PUBLIC_API_GRAPHQL_PROD` and `NEXT_PUBLIC_API_GRAPHQL_WS_PROD` environment variables for any hosting solution you choose. The `NEXT_PUBLIC_API_GRAPHQL_PROD` and `NEXT_PUBLIC_API_GRAPHQL_WS_PROD` are used to connect to your production Apollo Server's https and websocket (wss) endpoints
 
-*Backend*
+**Backend**
 
 - Create an app in Heroku and connect your github repository version of this application to it.
 - Add your Heroku app's git URL (found on the settings tab in the Heroku dashboard) to your git remotes, `git remote add heroku <heroku-git-url>`
 - Considering this a monorepo, rather than deploying through the Heroku dashboard, run `./deploy-api-heroku.sh`. The deploy script will handle deploying the `real-time-voting-api` sub directory to Heroku
 
-*Database*
+**Database**
 
 - On the Heroku dashboard's "Resources" tab, search for `Heroku Postgres` in the Add-ons search
 - Follow the instructions to provision a FREE hobby dev level Postgres DB. This will automatically configure a required `DATABASE_URL` variable that allows the backend's Prisma client to properly generate models reflecting the state of the Postgres DB.
