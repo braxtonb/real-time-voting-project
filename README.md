@@ -50,7 +50,7 @@ Also, if you do not need to view your database with a GUI admin tool, I recommen
 
 After clicking the deploy button, select the `real-time-voting` directory.
 
-It is important to set the `API_GRAPHQL_PROD` and `API_GRAPHQL_WS_PROD` environment variables for any hosting solution you choose. The API_GRAPHQL_PROD and API_GRAPHQL_WS_PROD are used to connect to your production Apollo Server's https and websocket (wss) endpoints
+It is important to set the `API_GRAPHQL_PROD` and `API_GRAPHQL_WS_PROD` environment variables for any hosting solution you choose. The `API_GRAPHQL_PROD` and `API_GRAPHQL_WS_PROD` are used to connect to your production Apollo Server's https and websocket (wss) endpoints
 
 *Backend*
 
@@ -60,6 +60,6 @@ It is important to set the `API_GRAPHQL_PROD` and `API_GRAPHQL_WS_PROD` environm
 
 *Database*
 
-- On the Heroku dashboard's Resources tab, search for `Heroku Postgres` in the Add-ons search
+- On the Heroku dashboard's "Resources" tab, search for `Heroku Postgres` in the Add-ons search
 - Follow the instructions to provision a FREE hobby dev level Postgres DB. This will automatically configure a required `DATABASE_URL` variable that allows the backend's Prisma client to properly generate models reflecting the state of the Postgres DB.
-- With your method of choice, create `Franchise` and `Vote` tables in the Heroku Postgres DB and seed the database using the sql statements in `real-time-voting-db/postgres/init/10-franchise.sql` and `real-time-voting-db/postgres/init/20-vote.sql`. Note, when locally developing with docker-compose, creating and seeding the database and tables is handled by these sql files which are run on initialization of the Postges DB. For more information, checkout the "Initialization Scripts" section here - https://hub.docker.com/_/postgres
+- With your method of choice, create `Franchise` and `Vote` tables in the Heroku Postgres DB. For table structure and seeding guidance, use the sql statements in the [real-time-voting-db/postgres/init](https://github.com/braxtonb/real-time-voting-project/blob/master/real-time-voting-db/postgres/init/10-franchise.sql) directory. Note, seeding and creating the tables is handled by these sql files automatically when locally developing with docker-compose. For more information, checkout the "Initialization Scripts" section here - https://hub.docker.com/_/postgres.
